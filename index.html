@@ -4,6 +4,7 @@
     </head>
     <style>
         audio { width: 100%; }
+        .audio-wrapper { min-height: 48px; }
     </style>
     <body style="padding: 24px;">
         <h2>Music</h2>
@@ -12,42 +13,53 @@
             <h4>2021 March</h4>
 
             <div>Spring Rain I</div>
-            <audio controls src="https://raw.githubusercontent.com/culturing/Music/main/Raw/Spring%20Rain%20I.m4a"></audio>
+            <div class='audio-wrapper'><audio controls data-file="Spring Rain I.m4a"></audio></div>
 
             <div>Spring Rain II</div>
-            <audio controls src="https://raw.githubusercontent.com/culturing/Music/main/Raw/Spring%20Rain%20II.m4a"></audio>
+            <div class='audio-wrapper'><audio controls data-file="Spring Rain II.m4a"></audio></div>
 
             <div>Spring Rain III</div>
-            <audio controls src="https://raw.githubusercontent.com/culturing/Music/main/Raw/Spring%20Rain%20III.m4a"></audio>
+            <div class='audio-wrapper'><audio controls data-file="Spring Rain III.m4a"></audio></div>
 
             <div>Spring Rain IV</div>
-            <audio controls src="https://raw.githubusercontent.com/culturing/Music/main/Raw/Spring%20Rain%20IV.m4a"></audio>
+            <div class='audio-wrapper'><audio controls data-file="Spring Rain IV.m4a"></audio></div>
 
             <div>Summer Dreaming</div>
-            <audio controls src="https://raw.githubusercontent.com/culturing/Music/main/Raw/Summer%20Dreaming.m4a"></audio>
+            <div class='audio-wrapper'><audio controls data-file="Summer Dreaming.m4a"></audio></div>
             
             <div>Thoughts from abroad</div>
-            <audio controls src="https://raw.githubusercontent.com/culturing/Music/main/Raw/Thoughts%20from%20abroad.m4a"></audio>
+            <div class='audio-wrapper'><audio controls data-file="Thoughts from abroad.m4a"></audio></div>
 
             <h4>2021 April</h4>
 
             <div>Sudden pain</div>
-            <audio controls src="https://raw.githubusercontent.com/culturing/Music/main/Raw/Sudden%20pain.m4a"></audio>
+            <div class='audio-wrapper'><audio controls data-file="Sudden pain.m4a"></audio></div>
 
             <div>A door opens</div>
-            <audio controls src="https://raw.githubusercontent.com/culturing/Music/main/Raw/A%20door%20opens.m4a"></audio>
+            <div class='audio-wrapper'><audio controls data-file="A door opens.m4a"></audio></div>
             
             <div>Exploring Dissonance I</div>
-            <audio controls src="https://raw.githubusercontent.com/culturing/Music/main/Raw/Exploring%20Dissonance%20I.m4a"></audio>
+            <div class='audio-wrapper'><audio controls data-file="Exploring Dissonance I.m4a"></audio></div>
             
             <div>Exploring Dissonance II</div>
-            <audio controls src="https://raw.githubusercontent.com/culturing/Music/main/Raw/Exploring%20Dissonance%20II.m4a"></audio>
+            <div class='audio-wrapper'><audio controls data-file="Exploring Dissonance II.m4a"></audio></div>
             
             <div>Exploring Dissonance III</div>
-            <audio controls src="https://raw.githubusercontent.com/culturing/Music/main/Raw/Exploring%20Dissonance%20III.m4a"></audio>
+            <div class='audio-wrapper'><audio controls data-file="Exploring Dissonance III.m4a"></audio></div>
             
             <div>A woman's hand</div>
-            <audio controls src="https://raw.githubusercontent.com/culturing/Music/main/Raw/A%20woman's%20hand.m4a"></audio>
+            <div class='audio-wrapper'><audio controls data-file="A woman's hand.m4a"></audio></div>
         </div>
     </body>
+    <script>
+        var audios = document.getElementsByTagName('audio');
+        
+        for (var i=0; i < audios.length; ++i)
+        {
+            var el = audios[i];
+            var file = el.getAttribute('data-file')
+            el.src = encodeURI('https://raw.githubusercontent.com/culturing/Music/main/Raw/' + file);
+        }
+
+    </script>
 </html>
